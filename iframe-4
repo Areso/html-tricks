@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>iframe test</title>
+
+</head>
+
+<body>
+
+<iframe src="http://ya.ru" name="allFrames" id="allFrames" width="640" height="480" scrolling="yes" frameborder="0" border="0">
+</iframe> 
+
+<script language="JavaScript" type="text/javascript">
+
+w = window.innerWidth-50;  
+h = window.innerHeight-400;
+		myFrame = document.getElementById('allFrames');
+		myFrame.setAttribute('height',h);
+		myFrame.setAttribute('width',w);
+</script>
+</body>
+</html>
