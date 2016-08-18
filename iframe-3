@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>iframe test</title>
+
+</head>
+
+<body>
+
+<iframe src="http://www.mozilla.org/" name="allFrames" id="allFrames" width="640" height="480" scrolling="yes" frameborder="0" border="0">
+</iframe> 
+
+<script language="JavaScript" type="text/javascript">
+<!--
+function doChange()
+{
+	if (document.getElementById)
+	{
+		myFrame = document.getElementById('allFrames');
+		myFrame.src = "http://www.ya.ru/";
+		myFrame.setAttribute('scrolling','no');
+		myFrame.setAttribute('height',200);
+		myFrame.setAttribute('width',500);
+		// now check;
+		alert(document.getElementById('allFrames').getAttribute('scrolling'))
+	}
+}
+
+//-->
+</script>
+
+<br><a href="javascript: doChange()">change source and attributes</a>
+
+</body>
+</html>
