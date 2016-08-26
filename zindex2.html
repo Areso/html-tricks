@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<style media="screen" type="text/css">
+		#testImage1, #testImage2 {
+			display: none;
+		}
+		</style>
+	</head>
+	<body>
+		<canvas width="512" height="512" id="canvas"></canvas>
+		<img id="testImage1" src="http://upload.wikimedia.org/wikipedia/en/2/24/Lenna.png" />
+		<img id="testImage2" src="http://introcs.cs.princeton.edu/java/31datatype/peppers.jpg" />
+		<script>
+		var canvas = document.getElementById("canvas");
+		var ctx = canvas.getContext("2d");
+		var img1 = document.getElementById("testImage1");
+		var img2 = document.getElementById("testImage2");
+		
+		img1.onload = main;
+		img2.onload = main;
+		
+		var a = 'bar';
+		var imagesLoaded = 0;
+		function main() {
+			imagesLoaded += 1;
+			
+			if(imagesLoaded == 2) {
+				// composite now
+				ctx.drawImage(img1, 0, 0);
+				
+				ctx.globalAlpha = 0.99;
+				ctx.drawImage(img2, 0, 0);
+			}
+		}
+		
+		function loadImage(src, onload) {
+			// http://www.thefutureoftheweb.com/blog/image-onload-isnt-being-called
+			var img = new Image();
+			
+			img.onload = onload;
+			img.src = src;
+			
+			return img;
+		}
+		</script>
+    </body>
+</html>
